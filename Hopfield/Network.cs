@@ -50,7 +50,9 @@ namespace Hopfield
         public void TargetedActivation(int[] patrn, int index)
         {
             nrn[index].activation = nrn[index].Act(9, patrn);
+            Console.WriteLine("\n activation is " + nrn[index].activation);
             output[index] = Threshld(nrn[index].activation);
+            Console.WriteLine("\n output value is " + output[index] + "\n");
         }
     }
 }
