@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace Hopfield
         int[] patrn1 = { -1, 1, -1, 1, 1, 1, -1, 1, -1 };
         int[] patrn2 = { -1, -1, -1, 1, 1, 1, -1, -1, -1 };
         int[] usrpatrn = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
+        int[] dfault = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
         // weights
         int[] wt1 = { 0, 0, 2, -2, -2, -2, 2, 0, 2 };
         int[] wt2 = { 0, 0, 0, 0, 0, 0, 0, 2, 0 };
@@ -56,6 +58,19 @@ namespace Hopfield
             Console.WriteLine("\nPattern -\n");
         }
 
+        private void SetDisplay(Button btn, int state)
+        {
+            switch (state)
+            {
+                case 1:
+                    btn.BackColor = Color.Black;
+                    break;
+                case -1:
+                    btn.BackColor = Color.LightGray;
+                    break;
+            }
+        }
+
         private void Anominaly(int[] input)
         {
             Network h1 = new Network(wt1, wt2, wt3, wt4, wt5, wt6, wt7, wt8, wt9);
@@ -90,19 +105,16 @@ namespace Hopfield
                 anom = nuanom;
                 nuanom.Clear();
             }
-            // check closest
-            if(Enumerable.SequenceEqual(result, patrn1))
-            {
-                label1.Text = "PLUS";
-            }
-            else if(Enumerable.SequenceEqual(result, patrn2))
-            {
-                label1.Text = "MINUS";
-            }
-            else
-            {
-                label1.Text = "NEITHER";
-            }
+            //display
+            SetDisplay(disptl, result[0]);
+            SetDisplay(disptm, result[1]);
+            SetDisplay(disptr, result[2]);
+            SetDisplay(dispml, result[3]);
+            SetDisplay(dispmm, result[4]);
+            SetDisplay(dispmr, result[5]);
+            SetDisplay(dispbl, result[6]);
+            SetDisplay(dispbm, result[7]);
+            SetDisplay(dispbr, result[8]);
         }
 
         private void ToggleButton(int index, Button btn)
@@ -118,6 +130,29 @@ namespace Hopfield
                     btn.BackColor = Color.LightGray;
                     break;
             }
+        }
+
+        private void Clear()
+        {
+            usrpatrn = dfault;
+            topleft.BackColor = Color.LightGray;
+            topmid.BackColor = Color.LightGray;
+            topright.BackColor = Color.LightGray;
+            midleft.BackColor = Color.LightGray;
+            midmid.BackColor = Color.LightGray;
+            midright.BackColor = Color.LightGray;
+            botleft.BackColor = Color.LightGray;
+            botmid.BackColor = Color.LightGray;
+            botright.BackColor = Color.LightGray;
+            disptl.BackColor = Color.LightGray;
+            disptm.BackColor = Color.LightGray;
+            disptr.BackColor= Color.LightGray;
+            dispml.BackColor = Color.LightGray;
+            dispmm.BackColor = Color.LightGray;
+            dispmr.BackColor = Color.LightGray;
+            dispbl.BackColor = Color.LightGray;
+            dispbm.BackColor = Color.LightGray;
+            dispbr.BackColor = Color.LightGray;
         }
 
         private void topleft_Click(object sender, EventArgs e)
@@ -168,6 +203,11 @@ namespace Hopfield
         private void identify_Click(object sender, EventArgs e)
         {
             Anominaly(usrpatrn);
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

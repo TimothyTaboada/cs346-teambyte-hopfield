@@ -37,8 +37,17 @@
             this.topright = new System.Windows.Forms.Button();
             this.midright = new System.Windows.Forms.Button();
             this.botright = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.identify = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
+            this.dispbr = new System.Windows.Forms.Button();
+            this.dispmr = new System.Windows.Forms.Button();
+            this.disptr = new System.Windows.Forms.Button();
+            this.dispbm = new System.Windows.Forms.Button();
+            this.dispmm = new System.Windows.Forms.Button();
+            this.disptm = new System.Windows.Forms.Button();
+            this.dispbl = new System.Windows.Forms.Button();
+            this.dispml = new System.Windows.Forms.Button();
+            this.disptl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // topleft
@@ -122,15 +131,6 @@
             this.botright.UseVisualStyleBackColor = true;
             this.botright.Click += new System.EventHandler(this.botright_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(525, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Output";
-            // 
             // identify
             // 
             this.identify.Location = new System.Drawing.Point(87, 298);
@@ -141,13 +141,104 @@
             this.identify.UseVisualStyleBackColor = true;
             this.identify.Click += new System.EventHandler(this.identify_Click);
             // 
+            // clear
+            // 
+            this.clear.Location = new System.Drawing.Point(87, 356);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(186, 41);
+            this.clear.TabIndex = 20;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // dispbr
+            // 
+            this.dispbr.Location = new System.Drawing.Point(573, 197);
+            this.dispbr.Name = "dispbr";
+            this.dispbr.Size = new System.Drawing.Size(58, 55);
+            this.dispbr.TabIndex = 29;
+            this.dispbr.UseVisualStyleBackColor = true;
+            // 
+            // dispmr
+            // 
+            this.dispmr.Location = new System.Drawing.Point(573, 136);
+            this.dispmr.Name = "dispmr";
+            this.dispmr.Size = new System.Drawing.Size(58, 55);
+            this.dispmr.TabIndex = 28;
+            this.dispmr.UseVisualStyleBackColor = true;
+            // 
+            // disptr
+            // 
+            this.disptr.Location = new System.Drawing.Point(573, 75);
+            this.disptr.Name = "disptr";
+            this.disptr.Size = new System.Drawing.Size(58, 55);
+            this.disptr.TabIndex = 27;
+            this.disptr.UseVisualStyleBackColor = true;
+            // 
+            // dispbm
+            // 
+            this.dispbm.Location = new System.Drawing.Point(509, 197);
+            this.dispbm.Name = "dispbm";
+            this.dispbm.Size = new System.Drawing.Size(58, 55);
+            this.dispbm.TabIndex = 26;
+            this.dispbm.UseVisualStyleBackColor = true;
+            // 
+            // dispmm
+            // 
+            this.dispmm.Location = new System.Drawing.Point(509, 136);
+            this.dispmm.Name = "dispmm";
+            this.dispmm.Size = new System.Drawing.Size(58, 55);
+            this.dispmm.TabIndex = 25;
+            this.dispmm.UseVisualStyleBackColor = true;
+            // 
+            // disptm
+            // 
+            this.disptm.Location = new System.Drawing.Point(509, 75);
+            this.disptm.Name = "disptm";
+            this.disptm.Size = new System.Drawing.Size(58, 55);
+            this.disptm.TabIndex = 24;
+            this.disptm.UseVisualStyleBackColor = true;
+            // 
+            // dispbl
+            // 
+            this.dispbl.Location = new System.Drawing.Point(445, 197);
+            this.dispbl.Name = "dispbl";
+            this.dispbl.Size = new System.Drawing.Size(58, 55);
+            this.dispbl.TabIndex = 23;
+            this.dispbl.UseVisualStyleBackColor = true;
+            // 
+            // dispml
+            // 
+            this.dispml.Location = new System.Drawing.Point(445, 136);
+            this.dispml.Name = "dispml";
+            this.dispml.Size = new System.Drawing.Size(58, 55);
+            this.dispml.TabIndex = 22;
+            this.dispml.UseVisualStyleBackColor = true;
+            // 
+            // disptl
+            // 
+            this.disptl.Location = new System.Drawing.Point(445, 75);
+            this.disptl.Name = "disptl";
+            this.disptl.Size = new System.Drawing.Size(58, 55);
+            this.disptl.TabIndex = 21;
+            this.disptl.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dispbr);
+            this.Controls.Add(this.dispmr);
+            this.Controls.Add(this.disptr);
+            this.Controls.Add(this.dispbm);
+            this.Controls.Add(this.dispmm);
+            this.Controls.Add(this.disptm);
+            this.Controls.Add(this.dispbl);
+            this.Controls.Add(this.dispml);
+            this.Controls.Add(this.disptl);
+            this.Controls.Add(this.clear);
             this.Controls.Add(this.identify);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.botright);
             this.Controls.Add(this.midright);
             this.Controls.Add(this.topright);
@@ -160,7 +251,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -175,8 +265,17 @@
         private System.Windows.Forms.Button topright;
         private System.Windows.Forms.Button midright;
         private System.Windows.Forms.Button botright;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button identify;
+        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button dispbr;
+        private System.Windows.Forms.Button dispmr;
+        private System.Windows.Forms.Button disptr;
+        private System.Windows.Forms.Button dispbm;
+        private System.Windows.Forms.Button dispmm;
+        private System.Windows.Forms.Button disptm;
+        private System.Windows.Forms.Button dispbl;
+        private System.Windows.Forms.Button dispml;
+        private System.Windows.Forms.Button disptl;
     }
 }
 
